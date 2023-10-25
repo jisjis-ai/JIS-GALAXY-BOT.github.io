@@ -72,3 +72,35 @@ input[type="text"] {
     color: #333;
     font-family: Arial, sans-serif;
 }
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-media {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    }
+    
