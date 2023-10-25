@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f2f2f2; /* Fundo cinza claro */
+}
+
+.toolbar {
+    background: linear-gradient(45deg, #FF5733, #FFC733); /* Gradiente laranja a amarelo */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+button {
+    background-color: #FF1515; /* Vermelho */
+    color: #fff; /* Texto branco */
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.time-square,
+.info-square {
+    background-color: #4CAF50; /* Verde */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.info-square {
+    background-color: #007BFF; /* Azul */
+}
+
+#currentTime,
+#randomInfo {
+    margin: 0;
+}
+
+iframe {
+    position: absolute;
+    top: 80px; /* Altura da barra de ferramentas */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px); /* Subtrai a altura da barra de ferramentas */
+    border: none;
+}
+
+.random-time-square {
+    background-color: #FF5733; /* Laranja */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    border-radius: 5px;
+    /* Adiciona uma animação de piscar */
+    animation: blink 1s infinite;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#backBtn {
+    background: linear-gradient(45deg, #FF5733, #FFC733); /* Gradiente laranja a amarelo */
+    color: #fff; /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    position: relative;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+#backBtn:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    top: 50%;
+    left: -15px;
+    transition: transform 0.3s;
+    opacity: 0;
+}
+
+#backBtn:hover {
+    background: linear-gradient(45deg, #FFC733, #FF5733); /* Gradiente amarelo a laranja */
+}
+
+#backBtn:hover:before {
+    transform: translate(-2px, -2px) rotate(-45deg);
+    opacity: 1;
+}
+
+/* Restante do código permanece o mesmo */
