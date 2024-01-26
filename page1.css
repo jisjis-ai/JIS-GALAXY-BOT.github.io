@@ -2,12 +2,13 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #f2f2f2; /* Fundo cinza claro */
+    background-color: #121212; /* Fundo escuro */
+    font-family: 'Arial', sans-serif;
+    color: #fff; /* Texto branco */
 }
 
 .toolbar {
-    background: linear-gradient(45deg, #FF5733, #FFC733); /* Gradiente laranja a amarelo */
-    color: #fff; /* Texto branco */
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5); /* Gradiente azul ciano */
     padding: 10px;
     display: flex;
     justify-content: flex-start;
@@ -16,17 +17,23 @@ body {
 }
 
 button {
-    background-color: #FF1515; /* Vermelho */
-    color: #fff; /* Texto branco */
+    background-color: #ff4e50; /* Vermelho coral */
+    color: #fff;
     border: none;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #fc3c3f; /* Tom mais escuro de vermelho coral */
+    transform: scale(1.05);
 }
 
 .time-square,
-.info-square {
-    background-color: #4CAF50; /* Verde */
-    color: #fff; /* Texto branco */
+.info-square,
+.random-time-square {
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -36,8 +43,27 @@ button {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
+.time-square {
+    background-color: #4ecdc4; /* Azul turquesa */
+}
+
 .info-square {
-    background-color: #007BFF; /* Azul */
+    background-color: #2a363b; /* Azul escuro acinzentado */
+}
+
+.random-time-square {
+    background-color: #ff9f43; /* Laranja pastel */
+    /* Adiciona uma animação de piscar */
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }
 
 #currentTime,
@@ -54,32 +80,9 @@ iframe {
     border: none;
 }
 
-.random-time-square {
-    background-color: #FF5733; /* Laranja */
-    color: #fff; /* Texto branco */
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 5px;
-    border-radius: 5px;
-    /* Adiciona uma animação de piscar */
-    animation: blink 1s infinite;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
-}
-
-@keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
 #backBtn {
-    background: linear-gradient(45deg, #FF5733, #FFC733); /* Gradiente laranja a amarelo */
-    color: #fff; /* Texto branco */
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5); /* Gradiente azul ciano */
+    color: #fff;
     border: none;
     border-radius: 5px;
     padding: 8px 15px;
@@ -105,12 +108,10 @@ iframe {
 }
 
 #backBtn:hover {
-    background: linear-gradient(45deg, #FFC733, #FF5733); /* Gradiente amarelo a laranja */
+    background: linear-gradient(45deg, #3a7bd5, #00d2ff); /* Gradiente azul ciano invertido */
 }
 
 #backBtn:hover:before {
     transform: translate(-2px, -2px) rotate(-45deg);
     opacity: 1;
 }
-
-/* Restante do código permanece o mesmo */
