@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const logoutButton = document.getElementById("logout-button");
   const button1 = document.getElementById("button1");
   const button2 = document.getElementById("button2");
+  const button3 = document.getElementById("button3");
 
   logoutButton.addEventListener("click", function () {
     // Simular cierre de sesión: redirigir a la página de inicio de sesión
@@ -15,5 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   button2.addEventListener("click", function () {
     window.location.href = "placard.html";
+  });
+
+  button3.addEventListener("click", function () {
+    window.location.href = "olabet.html";
   });
 });
