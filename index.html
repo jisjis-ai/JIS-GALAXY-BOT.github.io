@@ -23,11 +23,169 @@
         <pre id="animation-text" style="font-family: monospace;"></pre>
         <!-- Removed the authentication section -->
         <div id="enabled-buttons">
-            <button id="button1" enabled>Bantubet</button>
-            <button id="button2" enabled>Placard</button>
-            <button id="button3" enabled>Olábet</button>
-            <button id="button4" enabled>Elephantbet</button>
-            <button id="button5" enabled>Betway</button>
+            
+            
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Crash Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin: 0;
+        }
+        .game-container {
+            text-align: center;
+            position: relative;
+            border: 2px solid green;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .rocket {
+            font-size: 3em;
+            animation: fly 2s linear infinite;
+            position: relative;
+        }
+        .hidden {
+            display: none;
+        }
+        .crash {
+            color: red;
+            font-size: 2em;
+        }
+        @keyframes fly {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(black, #001f3f);
+            z-index: -1;
+            animation: moveBackground 5s linear infinite;
+            border-radius: 10px;
+        }
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .buttons-container {
+            border: 2px solid green;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="background"></div>
+        <div id="counter">1.00X</div>
+        <div id="rocket" class="rocket">🚀</div>
+        <div id="message" class="hidden crash">Vôo pra longe!</div>
+    </div>
+
+    <div class="section">
+        <h2>Novo Aviator</h2>
+        <div class="buttons-container">
+            <div class="button-row">
+                <button class="button" onclick="location.href='placard.html'">Placard</button>
+                <button class="button" onclick="location.href='elephant.html'">ELEPHANTBet</button>
+            </div>
+            <div class="button-row">
+                <button class="button" onclick="location.href='bantu.html'">Bantubet</button>
+                <button class="button" onclick="location.href='olabet.html'">Olábet</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function startGame() {
+            const counterElement = document.getElementById('counter');
+            const rocketElement = document.getElementById('rocket');
+            const messageElement = document.getElementById('message');
+
+            let counter = 1.00;
+            const interval = 100; // update every 100ms
+            const maxCount = Math.random() * (3 - 1.5) + 1.5; // random number between 1.5 and 3
+
+            function updateCounter() {
+                counter += 0.01;
+                counterElement.innerText = counter.toFixed(2) + 'X';
+                if (counter >= maxCount) {
+                    clearInterval(intervalId);
+                    rocketElement.style.transform = 'translateY(-100vh)';
+                    setTimeout(() => {
+                        rocketElement.classList.add('hidden');
+                        counterElement.style.color = 'red';
+                        messageElement.classList.remove('hidden');
+                        setTimeout(resetGame, 5000);
+                    }, 1000); // wait for the rocket to fly away
+                }
+            }
+
+            const intervalId = setInterval(updateCounter, interval);
+        }
+
+        function resetGame() {
+            const counterElement = document.getElementById('counter');
+            const rocketElement = document.getElementById('rocket');
+            const messageElement = document.getElementById('message');
+
+            counterElement.innerText = '1.00X';
+            counterElement.style.color = '#fff';
+            rocketElement.classList.remove('hidden');
+            rocketElement.style.transform = 'translateY(0)';
+            messageElement.classList.add('hidden');
+
+            startGame();
+        }
+
+        startGame();
+    </script>
+</body>
+</html>
+
+            
+            
+            
+            
         </div>
     </div>
 
